@@ -18,6 +18,12 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:%(http_port)s/grafana/
       - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - GF_SMTP_ENABLED=true
+      - GF_SMTP_HOST=smtp.labtrans.ufsc.br:587  # Substitua pelo seu servidor SMTP
+      - GF_SMTP_USER=naoresponda.conexaodnit  # Substitua pelo seu usuário SMTP
+      - GF_SMTP_PASSWORD=Yymbvw:650  # Substitua pela sua senha SMTP
+      - GF_SMTP_FROM_ADDRESS=naoresponda.conexaodnit@labtrans.ufsc.br  # Substitua pelo endereço de e-mail de origem
+      - GF_SMTP_SKIP_VERIFY=true  # Defina como false se desejar verificar o certificado SSL/TLS
     entrypoint:
       - sh
       - -euc

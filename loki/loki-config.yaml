@@ -17,6 +17,11 @@ common:
   path_prefix: /loki
   replication_factor: 1
   storage:
+    cache:
+      enable_fifocache: true
+      fifocahce:
+        size: 500MB
+        validity: 1h
     s3:
       endpoint: minio-dnit-dev.labtrans.ufsc.br:9000
       insecure: false
