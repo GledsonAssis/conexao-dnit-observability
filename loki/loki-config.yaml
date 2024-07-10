@@ -18,11 +18,11 @@ common:
   replication_factor: 1
   storage:
     s3:
-      endpoint: minio:9000
-      insecure: true
+      endpoint: minio-dnit-dev.labtrans.ufsc.br:9000
+      insecure: false
       bucketnames: loki-data
-      access_key_id: loki
-      secret_access_key: supersecret
+      access_key_id: 4D876NZOFOV96IJXB56Z
+      secret_access_key: oZAOL4PJ6xJ6Btjg8af7oKSeSLti25kiM7ckOsjZ
       s3forcepathstyle: true
   ring:
     kvstore:
