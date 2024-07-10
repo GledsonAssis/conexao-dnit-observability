@@ -7,7 +7,7 @@ services:
   ##########################################################
   grafana:
     image: grafana/grafana:latest
-    container_name: grafana
+    container_name: conexao-dnit-grafana
     hostname: grafana
     ports:
       - "3000:3000"
@@ -35,12 +35,10 @@ services:
           editable: false
         EOF
         /run.sh
-    networks:
-      - conexao-dnit-network
   
   promtail:
     image: grafana/promtail:latest
-    container_name: promtail
+    container_name: conexao-dnit-promtail
     hostname: promtail
     volumes:
       - ./promtail/config.yaml:/etc/promtail/config.yaml:ro
@@ -49,7 +47,7 @@ services:
 
   loki:
     image: grafana/loki:latest
-    container_name: loki
+    container_name: conexao-dnit-loki
     hostname: loki
     command: -config.file=/etc/loki/local-config.yaml
     ports:
@@ -57,7 +55,7 @@ services:
 
   prometheus:
     image: prom/prometheus:latest
-    container_name: prometheus
+    container_name: conexao-dnit-prometheus
     hostname: prometheus
     ports:
       - "9090:9090"
