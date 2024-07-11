@@ -73,3 +73,6 @@ services:
       - ./prometheus:/etc/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+
+volumes:
+  grafana_data:
