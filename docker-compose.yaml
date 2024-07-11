@@ -43,6 +43,8 @@ services:
           editable: false
         EOF
         /run.sh
+    volumes:
+      - grafana_data:/var/lib/grafana
   
   promtail:
     image: grafana/promtail:latest
